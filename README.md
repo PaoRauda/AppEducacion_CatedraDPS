@@ -10,3 +10,7 @@
 - [Link Proyecto Jira](https://proyectocatedra-dps.atlassian.net/jira/software/projects/DPS/boards/1/timeline?shared=&atlOrigin=eyJpIjoiNzU2ODcyMWUxZDI5NDk4N2FhNWM4OWRjOWRjYmNjNjQiLCJwIjoiaiJ9)
 
 ### Licencias Creative Commons:
+https://drive.google.com/file/d/1cTd2vozKGvnOQBOZ9s2krQCHWcEgO_00/view?usp=sharing
+
+### Mockups:
+https://drive.google.com/file/d/1aYaj2rxXicXn4ja-uTBzVBF75rlGDLiQ/view?usp=sharing
