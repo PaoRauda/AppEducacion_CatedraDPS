@@ -8,6 +8,7 @@ import Calendario from './calendario';
 import MisCursos from './MisCursos';
 import Inscribirse from './Inscribirse';
 import MiCuenta from './MiCuenta';
+import Acerca from './Acerca';
 import Login from './login';
 import LogOut from './logOut';
 
@@ -46,6 +47,10 @@ function StackNavigatorMenu(){
       <Drawer.Screen
         name="Mi Cuenta"
         component={MiCuenta}
+      />
+      <Drawer.Screen
+        name="Acerca De"
+        component={Acerca}
       />
       <Drawer.Screen
         name="Log Out"
