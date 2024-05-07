@@ -19,3 +19,4 @@ https://drive.google.com/file/d/1cTd2vozKGvnOQBOZ9s2krQCHWcEgO_00/view?usp=shari
 https://drive.google.com/file/d/1aYaj2rxXicXn4ja-uTBzVBF75rlGDLiQ/view?usp=sharing
 
 ### LINK EXPO
+- [Proyecto](https://snack.expo.dev/@paofer/appeducacion_dps-pc)
