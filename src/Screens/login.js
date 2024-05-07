@@ -8,43 +8,32 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import axios from 'axios';
-import {useData} from '../DataContext'
+import { useData } from '../DataContext';
 
 function Login({ navigation }) {
-  const {usuario, setUsuario } = useData();
+  const { setUsuario, setUserId } = useData(); // Obtén la función setUsuario y setUserId del contexto
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  useEffect(() => { // Al cambiar valor de Usuario se llama el metodo validarLogin()
-    if (usuario != '') {
-      validarLogin();
-    }
-  }, [usuario]);
-
   const getUsuario = async () => {
-      const respuesta = await axios.get('https://dpswebsite.000webhostapp.com/?email='+email+'&password='+password+'&action=ObtenerUsuario');
-      setUsuario(respuesta.data) // Se guardan datos obtenidos de la API en "usuario"
+    try {
+      const respuesta = await axios.get(`https://dpswebsite.000webhostapp.com/?email=${email}&password=${password}&action=ObtenerUsuario`);
+      const userData = respuesta.data;
+      setUsuario(userData); // Guarda los datos obtenidos de la API en "usuario"
+      setUserId(userData.id); // Guarda el ID del usuario en el contexto de datos
+      navigation.navigate('App');
+    } catch (error) {
+      console.error('Error al obtener usuario:', error);
+      setError('Usuario no encontrado');
+    }
   };
-
-  const validarLogin = () => { // Se verifica que haya datos en "usuario"
-    if(usuario != false && usuario != null ){ 
-      navigation.navigate('App')
-      } else {
-        setError("Usuario no encontrado")
-      }
-  }
-
-  const handleLogin = () => {
-    //navigation.navigate('App')
-    getUsuario();
-};
-
 
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-      <Text>Bienvenido/a{usuario.nombre}</Text>
+        <Text style={styles.welcomeText}>Bienvenido/a</Text>
         <Image
           source={require('../../assets/icons/logo.png')}
           style={styles.logo}
@@ -66,7 +55,7 @@ function Login({ navigation }) {
         onChangeText={setPassword}
       />
       {error ? <Text style={styles.error}>{error}</Text> : null}
-      <TouchableOpacity style={styles.buttonPrimary} onPress={handleLogin}>
+      <TouchableOpacity style={styles.buttonPrimary} onPress={getUsuario}>
         <Text style={styles.buttonText}>Iniciar Sesión</Text>
       </TouchableOpacity>
     </View>
@@ -80,13 +69,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
-    backgroundColor: '#FFFF',
+    backgroundColor: '#2E57D1',
+  },
+    welcomeText: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#FFFFFF',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: '#696276 ',
+    color: '#FFFFFF',
   },
   input: {
     height: 40,
@@ -125,3 +120,4 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
+

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { useData } from '../DataContext'; // Importa el contexto de datos
 
-function MisCursos({ navigation }) {
+function CursosSolicitados({ navigation }) {
   const { userId } = useData(); // Obtiene el ID del usuario del contexto de datos
   const [cursos, setCursos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,9 +14,9 @@ function MisCursos({ navigation }) {
       fetch(`https://dpswebsite.000webhostapp.com/index.php?estudiante_id=${userId}&action=ObtenerCursosInscritos`)
         .then(response => response.json())
         .then(data => {
-          // Filtrar los cursos por el estado "inscrito"
-          const cursosInscritos = data.filter(curso => curso.estado === 'inscrito');
-          setCursos(cursosInscritos);
+          // Filtrar los cursos por el estado "solicitado"
+          const cursosSolicitados = data.filter(curso => curso.estado === 'solicitado');
+          setCursos(cursosSolicitados);
           setLoading(false);
         })
         .catch(error => {
@@ -28,7 +28,7 @@ function MisCursos({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Mis Cursos</Text>
+      <Text style={styles.title}>Cursos Solicitados</Text>
       {loading ? (
         <ActivityIndicator size="large" color="#0000ff" />
       ) : (
@@ -40,16 +40,12 @@ function MisCursos({ navigation }) {
               </TouchableOpacity>
             ))}
           </View>
-          <TouchableOpacity style={styles.buttonSecondary} onPress={() => navigation.navigate('Inscribirse')}>
-            <Text style={styles.buttonText}>Inscribirse a Diplomado</Text>
-          </TouchableOpacity>
         </>
       )}
-      {/* Footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Contactos 2237-0901 o esc.educacion@gmail.com</Text>
-        <Text style={styles.footerText2}>Educación de calidad con Proyección Social</Text>
-      </View>
+
+      <TouchableOpacity style={styles.buttonSecondary} onPress={() => navigation.goBack()}>
+        <Text style={styles.buttonText}>Regresar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -84,25 +80,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  footer: {
-    backgroundColor: '#222',
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-  footerText: {
-    color: '#FFF',
-    fontSize: 12,
-    marginBottom: 5,
-  },
-  footerText2: {
-    color: '#FFF',
-    fontSize: 12,
-  },
 });
 
-export default MisCursos;
+export default CursosSolicitados;
+
+
+
+

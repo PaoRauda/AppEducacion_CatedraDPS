@@ -8,12 +8,13 @@ import MenuNavigation from './src/Screens/MenuNavigation';
 export default function App() {
   return (
     <NavigationContainer>
-    <DataProvider>
-   <MenuNavigation />
-   </DataProvider>
-   </NavigationContainer>
+    
+      <DataProvider>
+        <MenuNavigation />
+      </DataProvider>
+    </NavigationContainer>
   );
-}
+} 
 
 const styles = StyleSheet.create({
   container: {

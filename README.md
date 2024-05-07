@@ -1,21 +1,11 @@
-# AppEducacion_CatedraDPS
-## DSS404 - G05T
+# Sample Snack app
 
-## Integrantes
-- Jennifer Patricia Zaldaña Beltran ZB212784
-- Calvin Jonathan Mena Dimas MD232400
-- Paola Fernanda Ramirez Rauda RR232015
-- Diego Enrique Canjura Estrada CE221950
-- Cesia Aracely Raymundo Peraza RP231877
-- José Rolando Álvarez Mejía AM232553 
+Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
 
-### LINKS:
-- [Link Proyecto Jira](https://proyectocatedra-dps.atlassian.net/jira/software/projects/DPS/boards/1/timeline?shared=&atlOrigin=eyJpIjoiNzU2ODcyMWUxZDI5NDk4N2FhNWM4OWRjOWRjYmNjNjQiLCJwIjoiaiJ9)
+When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
 
-### Licencias Creative Commons:
-https://drive.google.com/file/d/1cTd2vozKGvnOQBOZ9s2krQCHWcEgO_00/view?usp=sharing
+All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
 
-### Mockups:
-https://drive.google.com/file/d/1aYaj2rxXicXn4ja-uTBzVBF75rlGDLiQ/view?usp=sharing
+If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
 
-### LINK EXPO
+Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
